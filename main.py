@@ -1,4 +1,6 @@
 # +++++++++ Lista +++++++++
+print(dict)
+
 coches = ["Subaru", "Ford", "Ka", "Mazda", "Peugeot"]
 
 coches.remove("Subaru")
@@ -41,7 +43,7 @@ dic = {
 }
 
 print(dic)                                #Tot el dic
-print(dic["Sindria"])                     #imprime value de la key
+print(dic["Marco"])                       #imprime value de la key
 print(dic.items())                        #todos los items como clave:valor
 print(dic.keys())                         #solo keys
 print(dic.values())                       #solo values
@@ -59,11 +61,35 @@ for key,value in dic.items():
     print(f'La clave es {key} y el valor es {value}')
 
 
+# Crea un diccionario con la letra como key y el número de apariciones
+text = 'abracadabra'
+dict = {}
+for i in text:
+    if i not in dict:
+        dict[i]=1
+    else:
+        dict[i]+=1
+
+
+
 #++++++ Tuplas +++++++++
 # igual que listas pero no modificables
 
 food = ("spam", "eggs", "sausages")
 print(food[2])        #imprime por índice
+
+# *********Sets********
+#igual que listas pero no se pueden indexar. Se puede operar como Conjuntos (union, disjuncion...)
+# No puede tener elementos repetidos
+
+frutas={'Manzana','Pera','Platano','Fresa','Kiwi'}
+comida = {'Fresa','Melon','Melocoton'}
+print(frutas)
+print(frutas & comida)            # imprime la interseccion, Fresa
+print(frutas.union(comida))       # Une las dos lista, sin Fresa
+
+print(list(frutas))               # Lo convierte en lista
+print('Pera' in frutas)           # True
 
 # Lista con varias tuplas
 contacts = [
@@ -81,6 +107,14 @@ for i in contacts:
         break
 else: print("Not found")
 
+# ***** Comprehension Lists *********
+evens=[i**2 for i in range(10) if i**2 % 2 == 0]
+print(evens)
+# Se crea una nueva lista con la condicion de la segunda lista, sin vocales
+word = 'Murcielago'
+vowels = {'a', 'e', 'i', 'o', 'u'}
+listaa = [i for i in word if i not in vowels]
+print(listaa)
 
 
 
